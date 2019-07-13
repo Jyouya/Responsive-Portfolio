@@ -70,6 +70,8 @@ h1 {
     position: relative;
     color: #777777;
     text-decoration: none;
+    line-height: 68px;
+    padding: 100% 1.7em;
 }
 
 .nav-button:hover {
