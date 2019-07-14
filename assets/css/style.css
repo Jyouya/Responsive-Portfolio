@@ -53,6 +53,10 @@ p {
     margin: 1em 0;
 }
 
+.portfolio {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
 /* rules for the header's internal layout */
 
 header {
@@ -193,6 +197,37 @@ input#submit {
     margin-top: 16px;
 }
 
+/* styling for portfolio */
+.portfolio {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: minmax(100px, auto) minmax(100px, auto);
+    margin-top: 1.5em;
+}
+
+.portfolio>.thumbnail {
+    position: relative;
+}
+
+.thumbnail>img {
+    width: 100%;
+}
+
+.portfolio>.thumbnail>label {
+    position: absolute;
+    bottom: 10%;
+    background: #4aaaa5;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    padding: .5em;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 2;
+}
+
 @media screen and (max-width: 980px) {
     
     
@@ -250,5 +285,9 @@ input#submit {
 
     .navbar {
         margin: 0 auto;
+    }
+
+    .portfolio {
+        grid-template-columns: auto;
     }
 }
