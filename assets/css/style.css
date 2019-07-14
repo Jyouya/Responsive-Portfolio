@@ -137,6 +137,8 @@ article {
 
 .page-title {
     color: #4aaaa5;
+    padding-bottom: .83em;
+    border-bottom: solid #cccccc 2px;
 }
 
 .portrait {
@@ -144,7 +146,6 @@ article {
     padding-right: 1.5em;
     padding-top: .5em;
     width: 25%;
-    height: 25%;
 }
 
 .clearfix::after {
@@ -182,9 +183,50 @@ input#submit {
     margin-top: 16px;
 }
 
-@media screen and (max-width: 542px) {
-    .nav-button {
-        padding: 100% 1em 1.7em;
+@media screen and (max-width: 980px) {
+    .content.page {
+        width: calc(640px - 1em);
+        margin-left: 1em;
+        min-width: margin;
     }
 }
 
+@media screen and (max-width: 768px) {
+    .portrait {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .content.page {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .content-box {
+        border-left: none;
+        border-right: none;
+    }
+
+    header>.page {
+        flex-wrap: wrap;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .spacer {
+        width: 0;
+        flex-grow: 0;
+    }
+
+    .portrait {
+        width: 100%;
+        float: none;
+    }
+
+    .navbar {
+        margin: auto;
+    }
+}
