@@ -126,17 +126,22 @@ footer {
 
 /* rules for the content area of the page */
 article {
-    color: #777777;
     line-height: 2;
     margin-block-start: 1em;
 }
 
 .content-box {
     background: white;
+    color: #777777;
     border: solid #cccccc 1px;
     margin: 1em auto;
     box-sizing: border-box;
     padding: 1em 2em;
+}
+
+.content-box>form {
+    line-height: 2;
+    margin-block-start: 1em;
 }
 
 .page-title {
@@ -165,7 +170,6 @@ input, textarea {
     color: #777777;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 3px;
     padding: 10px 14px;
     margin: 2px 0 10px;
 }
@@ -176,8 +180,10 @@ input#message {
 
 input:focus, textarea:focus {
     border-color: #4aaaa5;
+    border-left-width: .5em;
     outline: none !important; 
-    box-shadow: 0 0 3px #4aaaa5;
+    box-shadow: none;
+    padding-left: calc(15px - .5em) /* So the contents don't shift when the border expands */
 }
 
 input#submit {
@@ -191,7 +197,7 @@ input#submit {
     
     
     .content.page {
-        width: calc(640px - 2em);
+        width: calc(768px - 2em);
         margin-left: 1em;
     }
 
@@ -204,6 +210,10 @@ input#submit {
 @media screen and (max-width: 768px) {
     .portrait {
         width: 50%;
+    }
+
+    .content.page {
+        width: calc(100% - 2em);
     }
 }
 
@@ -239,6 +249,6 @@ input#submit {
     }
 
     .navbar {
-        margin: auto;
+        margin: 0 auto;
     }
 }

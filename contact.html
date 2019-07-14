@@ -33,18 +33,15 @@
     <div class="content page">
         <div class="content-box clearfix">
             <h2 class="page-title">About Me</h2>
-            <article>
-                <img src="assets/images/picture.png" alt="" class="portrait">
-                <p>I'm a classically trained saxophonist and composer. I studied at Georgia State University under Dr.
-                    Jan Baker. I play all kinds of music, from baroque music such as Bach's Cello Suites, to 21st
-                    century avant garde works, and everything in between. My compositional style is very modern, yet
-                    accessible.</p>
-
-                <p>In my free time, I like to cook and work on personal software projects. Some fun things I've made
-                    are: a program that sets your desktop background to a space-themed wallpaper that color-matches the
-                    currently focused window, a program to generate functional chord progressions, and a set of addons
-                    for Final Fantasy 11.</p>
-            </article>
+            <form>
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Your Name" />
+                <label>Email</label>
+                <input type="text" name="email" placeholder="example@gmail.com" />
+                <label>Message</label>
+                <textarea type="text" name="message" placeholder="Your message goes here..." rows=12></textarea>
+                <input id=submit type="submit">
+            </form>
         </div>
     </div>
     <footer>
