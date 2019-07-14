@@ -12,6 +12,10 @@ footer {
     flex-shrink: 0;
 }
 
+header {
+    box-sizing: border-box;
+}
+
 .content {
     flex-grow: 1;
 }
@@ -100,7 +104,7 @@ header>.page {
     color: #777777;
     text-decoration: none;
     line-height: 68px;
-    padding: 100% 1.7em calc(1.7em - 1px);
+    padding: 1.7em 1.7em calc(1.7em - 1px);
 
 }
 
@@ -184,10 +188,16 @@ input#submit {
 }
 
 @media screen and (max-width: 980px) {
+    
+    
     .content.page {
-        width: calc(640px - 1em);
+        width: calc(640px - 2em);
         margin-left: 1em;
-        min-width: margin;
+    }
+
+    header>.page {
+        padding-left: 17px;
+        width: calc(100% - 17px);
     }
 }
 
@@ -210,6 +220,8 @@ input#submit {
 
     header>.page {
         flex-wrap: wrap;
+        padding-left: 0;
+        width: 100%;
     }
 
     .title {
