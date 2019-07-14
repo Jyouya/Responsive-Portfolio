@@ -99,7 +99,7 @@ header>.page {
     position: relative;
     color: #777777;
     text-decoration: none;
-    padding: 1.7em 1.7em calc(1.7em - 1px);
+    padding: calc(1.7em - 1px) 1.7em;
     display: table-cell; /* The 'Contact' button on the 'Contact' page won't size correctly without this, and I have no idea why.  
         It centers the text vertically without a line-height hack though */
 }
