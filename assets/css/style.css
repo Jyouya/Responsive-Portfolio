@@ -1,14 +1,15 @@
 /* rules for overall page layout */
+
 body {
     background-image: url("../images/interlaced.png");
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
-header, 
-footer {
+header, footer {
     flex-shrink: 0;
 }
 
@@ -17,6 +18,7 @@ header {
 }
 
 .content {
+    position: relative;
     flex-grow: 1;
 }
 
@@ -27,6 +29,7 @@ header {
 }
 
 /* rules for typography */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -81,10 +84,35 @@ header>.page {
     margin: 0;
 }
 
-.title,
-.current-page,
-.nav-button:hover {
+.title
+/* .current-page */
+
+/* .nav-button:hover */
+
+    {
     background: #4aaaa5;
+}
+
+.nav-button::after {
+    content: "";
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #4aaaa5;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transition: top .3s;
+}
+
+.nav-button.current-page::after {
+    top: calc( 100% - .7em);
+}
+
+.nav-button:hover::after {
+    top: 0;
+    transition: top .3s;
 }
 
 .spacer {
@@ -93,6 +121,7 @@ header>.page {
 
 .navbar {
     flex-grow: 0;
+    overflow: hidden;
 }
 
 .nav-button {
@@ -100,23 +129,28 @@ header>.page {
     color: #777777;
     text-decoration: none;
     padding: calc(1.7em - 1px) 1.7em;
-    display: table-cell; /* The 'Contact' button on the 'Contact' page won't size correctly without this, and I have no idea why.  
+    display: table-cell;
+    /* The 'Contact' button on the 'Contact' page won't size correctly without this, and I have no idea why.  
         It centers the text vertically without a line-height hack though */
+    z-index: 0;
+    transition: color .2s;
 }
 
-.current-page {
+/* .current-page {
     position: absolute;
     bottom: 0;
     left: 0;
     height: .7em;
     width: 100%;
-}
+} */
 
 .nav-button:hover {
     color: white;
+    transition: color .2s;
 }
 
 /* rules for the footer's internal layout */
+
 footer {
     background-color: darkslategray;
     color: white;
@@ -129,6 +163,7 @@ footer {
 }
 
 /* rules for the content area of the page */
+
 article {
     line-height: 2;
     margin-block-start: 1em;
@@ -141,6 +176,14 @@ article {
     margin: 1em auto;
     box-sizing: border-box;
     padding: 1em 2em;
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+.content-box::before {
+    content: "";
+    height: 100%;
 }
 
 .content-box>form {
@@ -167,7 +210,16 @@ article {
     display: table;
 }
 
+.start-transparent {
+    opacity: 0;
+}
+
+.start-right {
+    left: 100%;
+}
+
 /* styling for forms */
+
 input, textarea {
     display: block;
     width: 100%;
@@ -185,9 +237,9 @@ input#message {
 input:focus, textarea:focus {
     border-color: #4aaaa5;
     border-left-width: .5em;
-    outline: none !important; 
+    outline: none !important;
     box-shadow: none;
-    padding-left: calc(15px - .5em) /* So the contents don't shift when the border expands */
+    padding-left: calc(15px - .5em)/* So the contents don't shift when the border expands */
 }
 
 input#submit {
@@ -198,6 +250,7 @@ input#submit {
 }
 
 /* styling for portfolio */
+
 .portfolio {
     display: grid;
     grid-column-gap: 20px;
@@ -229,13 +282,10 @@ input#submit {
 }
 
 @media screen and (max-width: 980px) {
-    
-    
     .content.page {
         width: calc(768px - 2em);
         margin-left: 1em;
     }
-
     header>.page {
         padding-left: 17px;
         width: calc(100% - 17px);
@@ -246,7 +296,6 @@ input#submit {
     .portrait {
         width: 50%;
     }
-
     .content.page {
         width: calc(100% - 2em);
     }
@@ -257,36 +306,29 @@ input#submit {
         width: 100%;
         margin-left: 0;
     }
-
     .content-box {
         border-left: none;
         border-right: none;
     }
-
     header>.page {
         flex-wrap: wrap;
         padding-left: 0;
         width: 100%;
     }
-
     .title {
         width: 100%;
     }
-
     .spacer {
         width: 0;
         flex-grow: 0;
     }
-
     .portrait {
         width: 100%;
         float: none;
     }
-
     .navbar {
         margin: 0 auto;
     }
-
     .portfolio {
         grid-template-columns: auto;
     }
