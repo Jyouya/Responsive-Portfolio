@@ -20,7 +20,7 @@ header {
 .content {
     position: relative;
     flex-grow: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
     grid-template-columns: 100%;
     display: grid;
 }
@@ -68,6 +68,30 @@ p {
 
 .portfolio {
     font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.github-link {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    font-size: 45pt;
+    opacity: .5;
+    color: #555555;
+    transition: .3s;
+}
+
+.github-link.light {
+    color: #aaaaaa;
+}
+
+.github-link:hover {
+    opacity: .8;
+    text-shadow: 0 0 10px white;
+    transition: .3s;
+}
+
+.github-link.light:hover {
+    text-shadow: 0 0 10px #777777;
 }
 
 /* rules for the header's internal layout */
@@ -262,18 +286,40 @@ input#submit {
     margin-top: 16px;
 }
 
+.links {
+    text-align: right;
+}
+
+.links>a {
+    padding-left: 1em;
+    color: #777;
+    text-decoration:none;
+}
+
+.links>a:visited{
+    color: #777;
+}
+
 /* styling for portfolio */
 
 .portfolio {
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    grid-template-columns: minmax(100px, auto) minmax(100px, auto);
+    grid-template-columns: minmax(100px, calc(50% - 10px)) minmax(100px, calc(50% - 10px));
     margin-top: 1.5em;
 }
 
 .portfolio>.thumbnail {
     position: relative;
+    box-shadow: 2px 2px 10px #44444444;
+    max-height: 327.75px;
+    transition: .3s;
+}
+
+.thumbnail:hover {
+    /* transform: scale(1.03);
+    transition: .3s; */
 }
 
 .thumbnail>img {
