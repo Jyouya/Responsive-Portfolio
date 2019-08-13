@@ -44,6 +44,7 @@ function drawAbout() {
             </article>
             <br/>`),
     $('<div class="links">').append(
+        $('<a href="assets/other/Will West.pdf">Resume</a>'),
         $('<a href="mailto:willwest8xp@gmail.com"><i class="far fa-envelope"></i></a>'),
         $('<a href="https://github.com/Jyouya"><i class="fab fa-github"></i></a>'),
         $('<a href="https://www.linkedin.com/in/will-west-ab19ab97/"><i class="fab fa-linkedin-in"></i></a>')
