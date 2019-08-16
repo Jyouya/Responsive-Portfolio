@@ -88,6 +88,12 @@ const portfolio = [
         source: 'https://github.com/Jyouya/unit-4-game',
         label: true,
         lightIcon: true,
+    },
+    {
+        title: 'LIRI CLI',
+        img: './assets/images/liri.png',
+        link: 'https://github.com/Jyouya/liri-node-app',
+        label: true
     }
 ]
 
