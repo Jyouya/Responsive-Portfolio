@@ -94,6 +94,13 @@ const portfolio = [
         img: './assets/images/liri.png',
         link: 'https://github.com/Jyouya/liri-node-app',
         label: true
+    },
+    {
+        title: 'Friend Finder',
+        img: './assets/images/friend-finder.png',
+        link: 'https://mans-best-friend-finder.herokuapp.com/',
+        source: 'https://github.com/Jyouya/Friend-Finder',
+        label: false;
     }
 ]
 
