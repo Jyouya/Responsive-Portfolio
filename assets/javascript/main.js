@@ -100,7 +100,7 @@ const portfolio = [
         img: './assets/images/friend-finder.png',
         link: 'https://mans-best-friend-finder.herokuapp.com/',
         source: 'https://github.com/Jyouya/Friend-Finder',
-        label: false;
+        label: false
     }
 ]
 
