@@ -101,6 +101,13 @@ const portfolio = [
         link: 'https://mans-best-friend-finder.herokuapp.com/',
         source: 'https://github.com/Jyouya/Friend-Finder',
         label: false
+    },
+    {
+        title: 'Bamazon',
+        img: './assets/images/BAMazon.png',
+        link: 'https://fathomless-garden-79160.herokuapp.com',
+        source: 'https://github.com/Jyouya/Bamazon',
+        label: false
     }
 ]
 
