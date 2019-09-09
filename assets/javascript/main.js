@@ -12,20 +12,24 @@ const pageTable = {
 function changePage(newPage) {
     $('.nav-button').removeClass('current-page');
     $(this).addClass('current-page');
-    $('.content-box').animate({ opacity: 0, right: '110%' }, 500).promise()
+    $('.grid-box').animate({ opacity: 0, right: '110%' }, 500).promise()
         .then(
             function () {
                 $(this).remove();
             }
         );
     $('<div>')
-        .addClass('content-box start-transparent start-right')
+        .addClass('grid-box  start-transparent start-right')
         .appendTo('.content')
-        .append(...pageTable[newPage]())
+        .append(
+            $('<div>')
+                .addClass('content-box')
+                .append(...pageTable[newPage]())
+        )
         .animate({ opacity: 1, right: 0 }, 500).promise()
         .then(
             $(this).removeClass('start-right start-transparent')
-        );
+        )
 }
 
 function drawAbout() {
@@ -67,12 +71,11 @@ const portfolio = [
         label: true
     },
     {
-        title: 'Hangman',
-        img: './assets/images/hangman.png',
-        link: 'https://jyouya.github.io/Word-Guess-Game/',
-        source: 'https://github.com/Jyouya/Word-Guess-Game',
-        label: false,
-        lightIcon: true,
+        title: 'Bamazon',
+        img: './assets/images/BAMazon.png',
+        link: 'https://fathomless-garden-79160.herokuapp.com',
+        source: 'https://github.com/Jyouya/Bamazon',
+        label: false
     },
     {
         title: 'Anime Trivia',
@@ -103,12 +106,13 @@ const portfolio = [
         label: false
     },
     {
-        title: 'Bamazon',
-        img: './assets/images/BAMazon.png',
-        link: 'https://fathomless-garden-79160.herokuapp.com',
-        source: 'https://github.com/Jyouya/Bamazon',
-        label: false
-    }
+        title: 'Hangman',
+        img: './assets/images/hangman.png',
+        link: 'https://jyouya.github.io/Word-Guess-Game/',
+        source: 'https://github.com/Jyouya/Word-Guess-Game',
+        label: false,
+        lightIcon: true,
+    },
 ]
 
 function drawProfile() {

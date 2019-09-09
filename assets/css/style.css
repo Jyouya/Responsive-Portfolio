@@ -203,6 +203,12 @@ article {
     margin-block-start: 1em;
 }
 
+.grid-box {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    position: relative;
+}
+
 .content-box {
     background: white;
     color: #777777;
@@ -213,8 +219,6 @@ article {
     padding: 1em 2em;
     width: 100%;
     top: 0;
-    grid-column-start: 1;
-    grid-row-start: 1;
     position: relative;
 }
 
