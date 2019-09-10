@@ -1,7 +1,12 @@
 /* rules for overall page layout */
 
 body {
-    background-image: url("../images/interlaced.png");
+    /* background-image: url("../images/interlaced.png"); */
+    background-color: #107dac;
+    background-image: url('../images/Background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -97,11 +102,11 @@ p {
 /* rules for the header's internal layout */
 
 header {
-    background-color: white;
+    background-color: #4aaaa5;
     width: 100%;
-    border-style: solid;
+    /* border-style: solid;
     border-color: #cccccc;
-    border-width: 0 0 1px 0;
+    border-width: 0 0 1px 0; */
 }
 
 header>.page {
@@ -133,7 +138,8 @@ header>.page {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #4aaaa5;
+    /* background: #4aaaa5; */
+    background: white;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -160,7 +166,8 @@ header>.page {
 
 .nav-button {
     position: relative;
-    color: #777777;
+    /* color: #777777; */
+    color: white;
     text-decoration: none;
     padding: calc(1.7em - 1px) 1.7em;
     display: table-cell;
@@ -179,7 +186,7 @@ header>.page {
 } */
 
 .nav-button:hover {
-    color: white;
+    color: #777777;
     transition: color .2s;
 }
 
@@ -210,8 +217,8 @@ article {
 }
 
 .content-box {
-    background: white;
-    color: #777777;
+    /* background: white; */
+    color: #555;
     border: solid #cccccc 1px;
     /* margin: 1em auto; */
     margin: 1em 0;
@@ -220,11 +227,24 @@ article {
     width: 100%;
     top: 0;
     position: relative;
+    overflow: hidden;
 }
 
 .content-box::before {
     content: "";
+    /* background: #107dac; */
+    background: url('../images/Background-white.png');
+    background-position: center;
+    background-attachment: fixed;
+    /* background: white; */
     height: 100%;
+    filter: blur(5px);
+    position: absolute;
+    top: -5px;
+    padding-bottom: 7px;
+    left: -5px;
+    right: -5px;
+    z-index: -1;
 }
 
 .content-box>form {
@@ -233,9 +253,10 @@ article {
 }
 
 .page-title {
-    color: #4aaaa5;
+    /* color: #4aaaa5; */
+    color: #555;
     padding-bottom: .83em;
-    border-bottom: solid #cccccc 2px;
+    /* border-bottom: solid #cccccc 2px; */
 }
 
 .portrait {
@@ -290,18 +311,25 @@ input#submit {
     margin-top: 16px;
 }
 
+.links-vertical,
+.links-vertical a {
+    color: #555;
+    text-decoration: none;
+}
+
 .links {
     text-align: right;
 }
 
 .links>a {
     padding-left: 1em;
-    color: #777;
+    color: #555;
     text-decoration:none;
 }
 
+.links-vertical a:visited,
 .links>a:visited{
-    color: #777;
+    color: #555;
 }
 
 /* styling for portfolio */

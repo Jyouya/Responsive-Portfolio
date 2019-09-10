@@ -71,6 +71,13 @@ const portfolio = [
         label: true
     },
     {
+        title: 'Flutter',
+        img: './assets/images/Flutter.png',
+        link: 'https://obscure-dawn-10331.herokuapp.com',
+        source: 'https://github.com/Jyouya/Flutter',
+        label: false
+    },
+    {
         title: 'Bamazon',
         img: './assets/images/BAMazon.png',
         link: 'https://fathomless-garden-79160.herokuapp.com',
@@ -133,16 +140,23 @@ function drawProfile() {
 function drawContact() {
     return [
         $('<h2 class="page-title">Contact Me</h2>'),
-        $('<form>').append(
-            $('<label>').text('Name'),
-            $('<input type="text" name="name" placeholder="Your Name" disabled />'),
-            $('<label>').text('Email'),
-            $('<input type="text" name="email" placeholder="example@gmail.com" disabled />'),
-            $('<label>').text('Message'),
-            $('<textarea type="text" name="message" placeholder="Your message goes here..." rows=12 disabled></textarea>'),
-            $('<input id="submit" type="submit" disabled />')
-        ),
-        $('<h2>').html('This form is under construction, but you can email me at <a href="mailto:willwest8xp@gmail.com">willwest8xp@gmail.com</a>')
+        $('<div class="links-vertical">').append(
+            $('<p><a href="mailto:willwest8xp@gmail.com"><i class="far fa-envelope"></i> willwest8xp@gmail.com</a></p>'),
+            $('<p><i class="fas fa-phone"></i> 678-895-2223</p>'),
+            $('<p><a href="https://github.com/Jyouya"><i class="fab fa-github"></i> github.com/Jyouya</a></p>'),
+            $('<p><a href="https://www.linkedin.com/in/will-west-ab19ab97/"><i class="fab fa-linkedin-in"></i> linkedin</a></p>')
+        )
+
+        // $('<form>').append(
+        //     $('<label>').text('Name'),
+        //     $('<input type="text" name="name" placeholder="Your Name" disabled />'),
+        //     $('<label>').text('Email'),
+        //     $('<input type="text" name="email" placeholder="example@gmail.com" disabled />'),
+        //     $('<label>').text('Message'),
+        //     $('<textarea type="text" name="message" placeholder="Your message goes here..." rows=12 disabled></textarea>'),
+        //     $('<input id="submit" type="submit" disabled />')
+        // ),
+        // $('<h2>').html('This form is under construction, but you can email me at <a href="mailto:willwest8xp@gmail.com">willwest8xp@gmail.com</a>')
     ]
 
     // <h2 class="page-title">Contact</h2>
