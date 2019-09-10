@@ -75,6 +75,7 @@ const portfolio = [
         img: './assets/images/Flutter.png',
         link: 'https://obscure-dawn-10331.herokuapp.com',
         source: 'https://github.com/Jyouya/Flutter',
+        lightIcon: true,
         label: false
     },
     {
